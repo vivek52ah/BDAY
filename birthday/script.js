@@ -1,8 +1,10 @@
 // ✨ PERSONALIZE THE SURPRISE HERE
 const CONFIG = {
-  name: "Mahi",
+  name: "Muskan",
   from: "Your favourite person",
 };
+
+document.body.classList.add("locked");
 
 document.querySelectorAll("[data-name]").forEach((el) => {
   el.textContent = CONFIG.name;
@@ -25,6 +27,16 @@ const sendHugButton = document.querySelector("#send-hug");
 const hugMessage = document.querySelector("#hug-message");
 const pageProgress = document.querySelector("#page-progress");
 const cursorGlow = document.querySelector("#cursor-glow");
+const lightbox = document.querySelector("#lightbox");
+const lightboxImage = document.querySelector("#lightbox-image");
+const lightboxCaption = document.querySelector("#lightbox-caption");
+const lightboxCount = document.querySelector("#lightbox-count");
+const lightboxClose = document.querySelector("#lightbox-close");
+const lightboxPrev = document.querySelector("#lightbox-prev");
+const lightboxNext = document.querySelector("#lightbox-next");
+const photoCards = [...document.querySelectorAll(".photo-card")];
+let activePhoto = 0;
+let lightboxTouchStart = 0;
 
 let audioContext;
 let melodyTimer;
@@ -92,6 +104,7 @@ openButton.addEventListener("click", () => {
     intro.hidden = true;
     surprise.classList.add("visible");
     surprise.setAttribute("aria-hidden", "false");
+    document.body.classList.remove("locked");
     document.querySelectorAll(".hero .reveal").forEach((el, index) => {
       window.setTimeout(() => el.classList.add("in-view"), index * 160);
     });
@@ -128,6 +141,68 @@ window.addEventListener("scroll", () => {
 window.addEventListener("pointermove", (event) => {
   cursorGlow.style.left = `${event.clientX}px`;
   cursorGlow.style.top = `${event.clientY}px`;
+});
+
+function showPhoto(index) {
+  activePhoto = (index + photoCards.length) % photoCards.length;
+  const photo = photoCards[activePhoto];
+  const image = photo.querySelector("img");
+  lightboxImage.src = image.src;
+  lightboxImage.alt = image.alt;
+  lightboxCaption.textContent = photo.querySelector("figcaption").textContent;
+  lightboxCount.textContent = `${String(activePhoto + 1).padStart(2, "0")} / ${String(photoCards.length).padStart(2, "0")}`;
+}
+
+function openLightbox(index) {
+  showPhoto(index);
+  lightbox.classList.add("open");
+  lightbox.setAttribute("aria-hidden", "false");
+  document.body.classList.add("locked");
+  lightboxClose.focus();
+}
+
+function closeLightbox() {
+  lightbox.classList.remove("open");
+  lightbox.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("locked");
+  photoCards[activePhoto].focus();
+}
+
+photoCards.forEach((card, index) => {
+  card.tabIndex = 0;
+  card.setAttribute("role", "button");
+  card.setAttribute("aria-label", `Open photo ${index + 1}`);
+  card.addEventListener("click", () => openLightbox(index));
+  card.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      openLightbox(index);
+    }
+  });
+});
+
+lightboxClose.addEventListener("click", closeLightbox);
+lightboxPrev.addEventListener("click", () => showPhoto(activePhoto - 1));
+lightboxNext.addEventListener("click", () => showPhoto(activePhoto + 1));
+lightbox.addEventListener("click", (event) => {
+  if (event.target === lightbox) closeLightbox();
+});
+
+lightbox.addEventListener("touchstart", (event) => {
+  lightboxTouchStart = event.changedTouches[0].clientX;
+}, { passive: true });
+
+lightbox.addEventListener("touchend", (event) => {
+  const distance = event.changedTouches[0].clientX - lightboxTouchStart;
+  if (Math.abs(distance) < 45) return;
+  showPhoto(activePhoto + (distance < 0 ? 1 : -1));
+}, { passive: true });
+
+window.addEventListener("keydown", (event) => {
+  if (!lightbox.classList.contains("open")) return;
+  if (event.key === "Escape") closeLightbox();
+  if (event.key === "ArrowLeft") showPhoto(activePhoto - 1);
+  if (event.key === "ArrowRight") showPhoto(activePhoto + 1);
 });
 
 const observer = new IntersectionObserver(
