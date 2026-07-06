@@ -27,9 +27,15 @@
         <div class="star-field" aria-hidden="true">
           <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
         </div>
+        <div class="intro-portrait" aria-hidden="true">
+          <div class="portrait-halo"></div>
+          <img src="photo/WhatsApp Image 2026-07-06 at 11.30.41 AM.jpeg" alt="" />
+          <span class="portrait-note">one of one ♡</span>
+        </div>
         <div class="intro-orbit orbit-one" aria-hidden="true">✦</div>
         <div class="intro-orbit orbit-two" aria-hidden="true">♡</div>
-        <p class="eyebrow">A tiny something made just for you</p>
+        <div class="edition-badge"><span>Birthday Edition</span><i></i><span>2026</span></div>
+        <p class="eyebrow">A little universe made just for you</p>
         <h1 id="intro-title">MUSKAN...<br />you have a surprise.</h1>
         <button class="gift-button" id="open-surprise" type="button">
           <span class="gift-icon" aria-hidden="true">
@@ -56,6 +62,9 @@
         </nav>
 
         <section class="hero" id="home">
+          <div class="hero-watermark" aria-hidden="true">
+            <img src="photo/WhatsApp Image 2026-07-06 at 11.30.42 AM (1).jpeg" alt="" />
+          </div>
           <div class="hero-sparkles" aria-hidden="true">
             <span>✦</span><span>✧</span><span>✦</span>
           </div>
@@ -68,6 +77,9 @@
             Happy Birthday, <span data-name>Beautiful Human</span>! Here’s your
             little corner of the internet, wrapped in love.
           </p>
+          <div class="hero-signature reveal">
+            <span></span><i>for the girl who makes life prettier</i><span></span>
+          </div>
           <a class="scroll-cue reveal" href="#wish">
             <span>unwrap it</span>
             <span aria-hidden="true">↓</span>
@@ -84,6 +96,15 @@
             <span>MAKE A WISH</span><i>✦</i><span>YOU ARE LOVED</span><i>♡</i>
           </div>
         </div>
+
+        <section class="love-note reveal" aria-label="A special birthday note">
+          <span class="quote-mark" aria-hidden="true">“</span>
+          <p>
+            Some people make the world more beautiful simply by being in it.
+            <strong>You are one of those people.</strong>
+          </p>
+          <div class="note-flourish" aria-hidden="true"><i></i> ✦ <i></i></div>
+        </section>
 
         <section class="wish section" id="wish">
           <div class="section-number">01</div>
@@ -115,28 +136,28 @@
             <figure class="photo-card photo-main reveal">
               <img
                 src="photo/WhatsApp Image 2026-07-06 at 11.30.41 AM.jpeg"
-                alt="A beautiful illustrated portrait of Mahi"
+                alt="A beautiful illustrated portrait of Muskan"
               />
               <figcaption>main character energy ✦</figcaption>
             </figure>
             <figure class="photo-card photo-yellow reveal">
               <img
                 src="photo/WhatsApp Image 2026-07-06 at 11.30.42 AM (1).jpeg"
-                alt="Mahi wearing a bright yellow outfit"
+                alt="Muskan wearing a bright yellow outfit"
               />
               <figcaption>sunshine, but make it a person</figcaption>
             </figure>
             <figure class="photo-card photo-blue reveal">
               <img
                 src="photo/WhatsApp Image 2026-07-06 at 11.30.42 AM (2).jpeg"
-                alt="A portrait of Mahi in blue"
+                alt="A portrait of Muskan in blue"
               />
               <figcaption>pretty in every colour ♡</figcaption>
             </figure>
             <figure class="photo-card photo-mono reveal">
               <img
                 src="photo/WhatsApp Image 2026-07-06 at 11.30.42 AM.jpeg"
-                alt="A black and white portrait of Mahi"
+                alt="A black and white portrait of Muskan"
               />
               <figcaption>that smile, always</figcaption>
             </figure>
@@ -214,6 +235,17 @@
             Made with <span aria-label="love">♥</span> by <span data-from>Your favourite person</span>
           </footer>
         </section>
+
+        <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" aria-hidden="true">
+          <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close photo viewer">×</button>
+          <button class="lightbox-arrow lightbox-prev" id="lightbox-prev" type="button" aria-label="Previous photo">←</button>
+          <figure>
+            <img id="lightbox-image" src="" alt="" />
+            <figcaption id="lightbox-caption"></figcaption>
+          </figure>
+          <button class="lightbox-arrow lightbox-next" id="lightbox-next" type="button" aria-label="Next photo">→</button>
+          <span class="lightbox-count" id="lightbox-count"></span>
+        </div>
       </div>
     </main>
 
