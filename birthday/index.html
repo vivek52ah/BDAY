@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fff7ed" />
+    <meta
+      name="description"
+      content="A little birthday surprise, made with a whole lot of love."
+    />
+    <title>A Birthday Surprise ✨</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+    <canvas id="confetti" aria-hidden="true"></canvas>
+
+    <main>
+      <section class="intro" id="intro" aria-labelledby="intro-title">
+        <div class="star-field" aria-hidden="true">
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
+        <div class="intro-orbit orbit-one" aria-hidden="true">✦</div>
+        <div class="intro-orbit orbit-two" aria-hidden="true">♡</div>
+        <p class="eyebrow">A tiny something made just for you</p>
+        <h1 id="intro-title">MUSKAN...<br />you have a surprise.</h1>
+        <button class="gift-button" id="open-surprise" type="button">
+          <span class="gift-icon" aria-hidden="true">
+            <i class="gift-lid"></i><i class="gift-box"></i><i class="gift-ribbon"></i>
+          </span>
+          <span>Open your surprise</span>
+        </button>
+        <p class="sound-note">Sound on for the full experience ♪</p>
+      </section>
+
+      <div class="surprise" id="surprise" aria-hidden="true">
+        <nav class="nav" aria-label="Main navigation">
+          <span class="page-progress" id="page-progress" aria-hidden="true"></span>
+          <a class="logo" href="#home" aria-label="Back to top">♡</a>
+          <div class="nav-links">
+            <a href="#wish">Your wish</a>
+            <a href="#memories">Memories</a>
+            <a href="#reasons">Why you</a>
+            <a href="#finale">One more thing</a>
+          </div>
+          <button class="music-button" id="music-toggle" type="button" aria-label="Pause music">
+            <span class="music-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+          </button>
+        </nav>
+
+        <section class="hero" id="home">
+          <div class="hero-sparkles" aria-hidden="true">
+            <span>✦</span><span>✧</span><span>✦</span>
+          </div>
+          <div class="balloon balloon-one" aria-hidden="true"><i></i></div>
+          <div class="balloon balloon-two" aria-hidden="true"><i></i></div>
+          <div class="balloon balloon-three" aria-hidden="true"><i></i></div>
+          <p class="eyebrow reveal">Today is a very good day because...</p>
+          <h2 class="reveal">the world got<br /><em>you.</em></h2>
+          <p class="hero-copy reveal">
+            Happy Birthday, <span data-name>Beautiful Human</span>! Here’s your
+            little corner of the internet, wrapped in love.
+          </p>
+          <a class="scroll-cue reveal" href="#wish">
+            <span>unwrap it</span>
+            <span aria-hidden="true">↓</span>
+          </a>
+          <div class="floating-shape shape-pink" aria-hidden="true"></div>
+          <div class="floating-shape shape-yellow" aria-hidden="true"></div>
+          <div class="floating-shape shape-blue" aria-hidden="true"></div>
+        </section>
+
+        <div class="marquee" aria-label="Birthday celebration">
+          <div class="marquee-track">
+            <span>HAPPY BIRTHDAY</span><i>✦</i><span>MAKE A WISH</span><i>♡</i>
+            <span>YOU ARE LOVED</span><i>✦</i><span>HAPPY BIRTHDAY</span><i>♡</i>
+            <span>MAKE A WISH</span><i>✦</i><span>YOU ARE LOVED</span><i>♡</i>
+          </div>
+        </div>
+
+        <section class="wish section" id="wish">
+          <div class="section-number">01</div>
+          <div class="wish-card reveal">
+            <span class="tape" aria-hidden="true"></span>
+            <span class="wax-seal" aria-hidden="true">♡</span>
+            <p class="handwritten">My birthday wish for you</p>
+            <h3>May this year feel like sunshine finding you in every room.</h3>
+            <p>
+              May you laugh until your cheeks hurt, meet beautiful surprises,
+              and keep becoming more wonderfully, unmistakably you.
+            </p>
+            <div class="card-signoff">
+              With all my heart,<br /><strong data-from>Your favourite person</strong> ♡
+            </div>
+          </div>
+          <div class="doodle doodle-star" aria-hidden="true">✦</div>
+          <div class="doodle doodle-heart" aria-hidden="true">♡</div>
+        </section>
+
+        <section class="memories section" id="memories">
+          <div class="memory-heading reveal">
+            <div class="section-number">02</div>
+            <p class="eyebrow">Some favourite frames</p>
+            <h3>A face the camera<br /><em>clearly adores.</em></h3>
+            <p>Four little reminders that you make every frame brighter.</p>
+          </div>
+          <div class="photo-collage">
+            <figure class="photo-card photo-main reveal">
+              <img
+                src="photo/WhatsApp Image 2026-07-06 at 11.30.41 AM.jpeg"
+                alt="A beautiful illustrated portrait of Mahi"
+              />
+              <figcaption>main character energy ✦</figcaption>
+            </figure>
+            <figure class="photo-card photo-yellow reveal">
+              <img
+                src="photo/WhatsApp Image 2026-07-06 at 11.30.42 AM (1).jpeg"
+                alt="Mahi wearing a bright yellow outfit"
+              />
+              <figcaption>sunshine, but make it a person</figcaption>
+            </figure>
+            <figure class="photo-card photo-blue reveal">
+              <img
+                src="photo/WhatsApp Image 2026-07-06 at 11.30.42 AM (2).jpeg"
+                alt="A portrait of Mahi in blue"
+              />
+              <figcaption>pretty in every colour ♡</figcaption>
+            </figure>
+            <figure class="photo-card photo-mono reveal">
+              <img
+                src="photo/WhatsApp Image 2026-07-06 at 11.30.42 AM.jpeg"
+                alt="A black and white portrait of Mahi"
+              />
+              <figcaption>that smile, always</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="reasons section" id="reasons">
+          <div class="section-heading reveal">
+            <div class="section-number">03</div>
+            <p class="eyebrow">A few of approximately a million</p>
+            <h3>reasons you’re<br /><em>my favourite.</em></h3>
+          </div>
+          <div class="reason-grid">
+            <article class="reason-card coral reveal">
+              <span>01</span>
+              <div class="reason-icon" aria-hidden="true">☀</div>
+              <h4>Your light</h4>
+              <p>You make ordinary days feel warmer just by being in them.</p>
+            </article>
+            <article class="reason-card yellow reveal">
+              <span>02</span>
+              <div class="reason-icon" aria-hidden="true">☺</div>
+              <h4>Your laugh</h4>
+              <p>The kind that is wildly contagious and always worth chasing.</p>
+            </article>
+            <article class="reason-card blue reveal">
+              <span>03</span>
+              <div class="reason-icon" aria-hidden="true">∞</div>
+              <h4>Your heart</h4>
+              <p>Soft, brave, generous—and somehow making room for everyone.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="cake-section section">
+          <div class="cake-copy reveal">
+            <div class="section-number">04</div>
+            <p class="eyebrow">No birthday without a wish</p>
+            <h3>Close your eyes.<br />Make it a good one.</h3>
+            <p>Then tap the candle to blow it out.</p>
+          </div>
+          <button class="cake reveal" id="cake" type="button" aria-label="Blow out the birthday candle">
+            <span class="flame"></span>
+            <span class="wick"></span>
+            <span class="candle"></span>
+            <span class="icing"></span>
+            <span class="cake-body"></span>
+            <span class="plate"></span>
+          </button>
+          <p class="wish-made" id="wish-made" role="status">Wish officially sent to the universe ✨</p>
+        </section>
+
+        <section class="finale section" id="finale">
+          <div class="finale-content reveal">
+            <span class="big-heart" aria-hidden="true">♡</span>
+            <p class="eyebrow">And finally...</p>
+            <h3>I hope today loves you<br />as much as <em>I do.</em></h3>
+            <p>
+              Happy Birthday, <span data-name>Beautiful Human</span>.<br />
+              This year is going to look so good on you.
+            </p>
+            <div class="final-buttons">
+              <button class="replay-button" id="replay-confetti" type="button">
+                Celebrate again <span aria-hidden="true">✦</span>
+              </button>
+              <button class="hug-button" id="send-hug" type="button">
+                Tap for a hug <span aria-hidden="true">♡</span>
+              </button>
+            </div>
+          </div>
+          <div class="hug-message" id="hug-message" role="status">
+            <span>Big warm birthday hug delivered!</span> 🤗
+          </div>
+          <footer>
+            Made with <span aria-label="love">♥</span> by <span data-from>Your favourite person</span>
+          </footer>
+        </section>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
